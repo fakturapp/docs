@@ -2,6 +2,46 @@ export const metadata = { title: 'Changelog · Faktur Developers' }
 
 const entries = [
   {
+    version: 'v2.0.0-beta.3',
+    date: '2026-06-08',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          'Quotas de crédits par forfait : budgets par session de 5 heures et par semaine glissante propres aux formules Gratuit, Pro et Team',
+          'Coût des requêtes pondéré en crédits : 1 en lecture, 3 en suppression, 5 en écriture, 25 pour les opérations lourdes (PDF, exports, IA)',
+          'Limite par minute selon le forfait : 3 en Gratuit, 60 en Pro, 120 en Team',
+          "Limites de clés d'API par forfait : 1 en Gratuit, 2 en Pro, 5 en Team",
+          'Limites de projets par forfait : 1 en Gratuit, 3 en Pro, 20 en Team',
+          "Forfait de l'équipe exposé sur les endpoints ping et usage",
+          'Champs suspended et apiGraceEndsAt exposés sur les clés et les projets',
+          'En-têtes X-Credits-* et X-RateLimit-* accessibles aux navigateurs via CORS',
+        ],
+      },
+      {
+        title: 'Modifié',
+        items: [
+          "L'API Explorer requiert désormais une formule Pro ou Team",
+          'En cas de rétrogradation, les clés et projets excédentaires passent en période de grâce de 7 jours puis sont suspendus, et sont restaurés à la mise à niveau',
+        ],
+      },
+    ],
+  },
+  {
+    version: 'v2.0.0-beta.2',
+    date: '2026-05-18',
+    sections: [
+      {
+        title: 'Modifié',
+        items: [
+          'Le chemin de base /api/v2/ devient /api/platform/ dans toute la documentation et les exemples',
+          'Nouveau modèle de limitation par crédits : 3 requêtes par minute, 100 crédits par session de 5 heures, 1000 crédits par semaine glissante',
+          'Les réponses 429 précisent la raison du refus et les en-têtes X-Credits-* détaillent le budget restant',
+        ],
+      },
+    ],
+  },
+  {
     version: 'v2.0.0-beta.1',
     date: '2026-05-17',
     sections: [
